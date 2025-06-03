@@ -120,6 +120,11 @@ class MergeObject {
             inner = "hsl(" + topH + "deg, 100%, " + l + "%";
             outer = "rgba(0, 0, 0, 0)";
         }
+        if (level >= 2499) {
+            let l = (1 - Math.min(0.5, Math.max(0, (level - 152)) * 0.04)) * 100;
+            inner = "hsl(" + topH + "deg, 100%, " + l + "%";
+            outer = "rgba(255, 0, 255, 0)";
+        }
 
         return { inner, outer };
     }
@@ -200,6 +205,11 @@ class MergeObject {
                     let rMult = 0.7 + 0.7 * random.nextDouble() + 0.1 * Math.min(2500, level) / 1000;
                     let lvl = Math.min(1000, Math.floor(level / 3 * random.nextDouble()));
                     this.renderMerger(ctx, cx, cy, r * sizeMod / 2.5 * rMult, lvl, lifeTime * 3 * random.nextDouble(), false);
+                }
+                if (level >= 2000) {
+                    let rMult = 0.9 + 0.9 * random.nextDouble() + 0.1 * Math.min(20000, level) / 1000;
+                    let lvl = Math.min(8000, Math.floor(level / 3 * random.nextDouble()));
+                    this.renderMerger(ctx, cx, cy, r * sizeMod / 2.75 * rMult, lvl, lifeTime * 5 * random.nextDouble(), false);
                 }
                 else {
                     this.drawBubble(ctx, cx, cy, r / 3.5, outerCol, "black", 0.4);
