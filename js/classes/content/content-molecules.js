@@ -8,12 +8,16 @@ class ContentMolecules {
             new Molecule("C₆ - Carbon Ring", "images/currencies/molecules.png", new Decimal(1e93), 650, level => Decimal.pow(16384, level ** 1.25).mul(4)),
             new Molecule("CH₂O₂ - Methanoid Acid", "images/molecules/methanoidacid.png", Decimal.pow(2, 2048), 1000, level => Decimal.pow(2 ** 22, level ** 1.5).mul(5)),
             new Molecule("C₈H₁₈ - Octane", "images/molecules/octane.png", new Decimal("1e10000"), 2500, level => Decimal.pow(2 ** 31 - 1, level ** 1.8).mul(6))
+            new Molecule("C₅₀H₄₉N₁₅O₁₅S - Geninthiocin", "images/molecule/methane.png", new Decimal("1e3000003"), 10000, level => Decimal.pow(2 ** 40, level ** 1.9).mul(7)),
         ];
         this.currentMolecule = this.molecules[0];
         this.moleculeIdx = 0;
         this.upgrades = {
             matterBoost: new MoleculeUpgrade("More Matter", "It's so simple. Just a plain Matter Boost.",
                 level => Decimal.pow(10, level ** 2 + 3 + Math.max(0, level - 200) ** 3 + Math.max(0, level - 5000) ** 4),
+                level => Decimal.pow(2, level)),
+            matterBoost2: new MoleculeUpgrade("More Matter II", "It's so simple. Just a plain Matter Boost.",
+                level => Decimal.pow(100, level ** 3 + 4 + Math.max(0, level - 2000) ** 4 + Math.max(0, level - 10000) ** 5),
                 level => Decimal.pow(2, level)),
             fasterEnergyCores: new MoleculeUpgrade("Faster Energy Cores", "Energy Cores will take less Merges to Level up. The effect will take place immediately.",
                 level => Decimal.pow(1e3, level ** 3 + 3),
@@ -28,6 +32,11 @@ class ContentMolecules {
                 level => Decimal.pow(1e30, level ** 5 + 5),
                 level => new Decimal(5 + level * 0.01315468246), {
                 getEffectDisplay: effectDisplayTemplates.numberStandard("x", "", 7)
+            }),
+            mergerLevelExponent2: new MoleculeUpgrade("Merger Exponentiality II", "The production difference between Mergers used to be 5x... NO MORE!",
+                level => Decimal.pow(1e100000, level ** 5 + 5),
+                level => new Decimal(5 + level * 0.00131546824), {
+                getEffectDisplay: effectDisplayTemplates.numberStandard("x", "", 7.2)
             }),
             fasterMolecules: new MoleculeUpgrade("Faster Molecules", "Molecules will take less merges to level up. The effect will take place immediately.",
                 level => Decimal.pow(10, level ** 6 + 12),
