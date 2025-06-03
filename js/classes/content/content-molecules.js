@@ -7,8 +7,8 @@ class ContentMolecules {
             new Molecule("CH₄ - Methane", "images/molecules/methane.png", new Decimal(1e24), 400, level => Decimal.pow(64, level ** 1.1).mul(3)),
             new Molecule("C₆ - Carbon Ring", "images/currencies/molecules.png", new Decimal(1e93), 650, level => Decimal.pow(16384, level ** 1.25).mul(4)),
             new Molecule("CH₂O₂ - Methanoid Acid", "images/molecules/methanoidacid.png", Decimal.pow(2, 2048), 1000, level => Decimal.pow(2 ** 22, level ** 1.5).mul(5)),
-            new Molecule("C₈H₁₈ - Octane", "images/molecules/octane.png", new Decimal("1e10000"), 2500, level => Decimal.pow(2 ** 31 - 1, level ** 1.8).mul(6))
-            new Molecule("C₅₀H₄₉N₁₅O₁₅S - Geninthiocin", "images/molecule/methane.png", new Decimal("1e3000003"), 10000, level => Decimal.pow(2 ** 40, level ** 1.9).mul(7)),
+            new Molecule("C₈H₁₈ - Octane", "images/molecules/octane.png", new Decimal("1e10000"), 2500, level => Decimal.pow(2 ** 31 - 1, level ** 1.8).mul(6)),
+            new Molecule("C₅₀H₄₉N₁₅O₁₅S - Geninthiocin", "images/molecule/methane.png", new Decimal("1e3000003"), 10000, level => Decimal.pow(2 ** 40, level ** 1.9).mul(7))
         ];
         this.currentMolecule = this.molecules[0];
         this.moleculeIdx = 0;
