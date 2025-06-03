@@ -7,8 +7,7 @@ Vue.component("tab-settings", {
                 [
                     ["standard", "Standard"],
                     ["dark", "Dark"],
-                    ["amoled", "AMOLED"]
-                    ["mystic", "Mystic"]
+                    ["amoled", "AMOLED"],
                 ],
             exportedGame: ""
         }
