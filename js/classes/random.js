@@ -2,7 +2,7 @@ class Random
 {
     static get INT_MAX()
     {
-        return 2147483647;
+        return 9223372036854775807;
     }
 
     static get SEQ()
