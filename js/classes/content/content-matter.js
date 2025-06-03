@@ -60,14 +60,14 @@ class ContentMatter {
                 },
                 {
                     getEffectDisplay: effectDisplayTemplates.numberStandard("", "", 0),
-                    maxLevel: 43
+                    maxLevel: 94
                 }),
             matterOnMerge: new Upgrade("Matter on Merge", "Increase the Chance of getting 2 Seconds of your total Matter per Second on Merge.",
                 level => new Decimal(1e18).mul(Decimal.pow(3e3, level)),
                 level => new Decimal(0.02 * level),
                 {
                     getEffectDisplay: effectDisplayTemplates.percentStandard(),
-                    maxLevel: 10
+                    maxLevel: 50
                 })
         };
     }
