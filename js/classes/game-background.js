@@ -55,6 +55,11 @@ class GameBackground {
                 level: 9999,
                 fontColor: "#000000",
                 topBarColor: "#ffffff"
+            },
+            }
+                level: 14999,
+                fontColor: "#ffffff",
+                topBarColor: "#000000",
             }
         ];
     }
