@@ -8,6 +8,7 @@ Vue.component("tab-settings", {
                     ["standard", "Standard"],
                     ["dark", "Dark"],
                     ["amoled", "AMOLED"]
+                    ["mystic", "Mystic"]
                 ],
             exportedGame: ""
         }
@@ -71,7 +72,7 @@ Vue.component("tab-settings", {
         </div>
     </div>
     <div class="flex-center-center">
-        <label>Max FPS: <input type="range" v-model="settings.maxFps" min="5" max="120" step="5"/> {{settings.maxFps}}</label>
+        <label>Max FPS: <input type="range" v-model="settings.maxFps" min="5" max="250" step="5"/> {{settings.maxFps}}</label>
     </div>
     <div class="flex-center-center flex-wrap flex-gap margin-l">
         <ui-toggle v-model="settings.topBarShown">Resource Overview in Canvas</ui-toggle>
