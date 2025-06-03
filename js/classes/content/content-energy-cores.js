@@ -35,21 +35,21 @@ class ContentEnergyCores {
                 },
                 level => {
                     return new Decimal(3 + level).mul(Decimal.pow(1.175, level));
-                }, "energycores/muon.png")
+                }, "energycores/muon.png"),
             new EnergyCore("Kaon", new Decimal(1.5e14),
                 level => {
                     return 150 + 38 * level;
                 },
                 level => {
                     return new Decimal(3 + 1 + level).mul(Decimal.pow(1.075, level));
-                }, "energycores/kaon.png")
+                }, "energycores/kaon.png"),
             new EnergyCore("Pion", new Decimal(250e17),
                 level => {
                     return 220 + 110 * level;
                 },
                 level => {
                     return new Decimal(2 + 0.2 level).mul(Decimal.pow(1.15, level));
-                }, "energycores/pion.png")
+                }, "energycores/pion.png"),
             new EnergyCore("Quark", new Decimal(500e12),
                 level => {
                     return 100 + 20 * level;
