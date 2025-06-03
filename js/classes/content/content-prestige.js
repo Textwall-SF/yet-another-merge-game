@@ -13,7 +13,7 @@ class ContentPrestige {
                     return new Decimal(1 + 0.025 * level);
                 }, {
                 getEffectDisplay: effectDisplayTemplates.percentStandard("", 1),
-                maxLevel: 25
+                maxLevel: 75
             }),
             matterBoost: new PrestigeUpgrade("Matter Boost", "Boost Matter Production even further.",
                 level => {
@@ -43,7 +43,7 @@ class ContentPrestige {
                     return level > 0 ? (new Decimal(10e6).mul(Decimal.pow(50, level - 1))) : new Decimal(0);
                 }, {
                 getEffectDisplay: effectDisplayTemplates.numberStandard("", ""),
-                maxLevel: 100,
+                maxLevel: 300,
                 onBuy(){
                     game.matter.amount = Decimal.max(game.matter.amount, this.apply());
                 }
@@ -51,7 +51,7 @@ class ContentPrestige {
             socialBoost: new PrestigeUpgrade("Support Boost", "\"Support Me\" boost is better",
                 level => Decimal.pow(10000, (level + 1) ** 3).mul(100000),
                 level => new Decimal(3).mul(Decimal.pow(3, level)).pow(game.isotopes.upgrades.socialBoost.apply()), {
-                    maxLevel: 2,
+                    maxLevel: 5,
                     updateOn: () => [game.isotopes.upgrades.socialBoost]
                 })
         };
@@ -62,7 +62,10 @@ class ContentPrestige {
             [49, 1.7],
             [69, 2.4],
             [189, 2.5],
-            [249, 2.5]
+            [249, 2.5],
+            [499, 3],
+            [999, 10],
+            [1499, 100],
         ];
     }
 
