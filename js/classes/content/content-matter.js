@@ -27,7 +27,7 @@ class ContentMatter {
                     let priceMult = [level > 151 ? Decimal.pow(1.5, Math.floor((level - 151) / 10)) : new Decimal(1),
                     level > 500 ? Decimal.pow(1.75, Math.floor((level - 500) / 5)) : new Decimal(1),
                     level > 2500 ? Decimal.pow(1024, Math.floor((level - 2500) / 25)) : new Decimal(1),
-                    level > 5000 ? Decimal.pow(2 ** 31 - 1, Math.floor((level - 5000) / 50)) : new Decimal(1)];
+                    level > 5000 ? Decimal.pow(2 ** 31 - 1, Math.floor((level - 5000) / 50)) : new Decimal(1),
                     level > 15000 ? Decimal.pow(2 ** 40, Math.floor((level - 15000) / 150)) : new Decimal(1)];
                     let power = 1 + 0.0002 * Math.max(0, level - 10000);
                     return new Decimal(prices[prices.length - 1]).mul(Decimal.pow(7, level - prices.length + 1)).mul(priceMult[0]).mul(priceMult[1])
