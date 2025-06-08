@@ -30,7 +30,11 @@ class CanvasUtils {
                 await loadImage("images/bgs/9.png"),
                 await loadImage("images/bgs/10.png"),
                 await loadImage("images/bgs/11.png"),
-                await loadImage("images/bgs/12.png")
+                await loadImage("images/bgs/12.png"),
+                await loadImage("images/bgs/13.png"),
+                await loadImage("images/bgs/14.png"),
+                await loadImage("images/bgs/15.png"),
+                await loadImage("images/bgs/16.png")
             ],
             bgVignette: await loadImage("images/bgvignette.png"),
             progress: await loadImage("images/progress.png"),
