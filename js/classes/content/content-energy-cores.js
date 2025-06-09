@@ -36,7 +36,7 @@ class ContentEnergyCores {
                 level => {
                     return new Decimal(3 + level).mul(Decimal.pow(1.175, level));
                 }, "energycores/muon.png"),
-            new EnergyCore("Kaon", new Decimal(1.5e14),
+            new EnergyCore("Kaon", new Decimal(1.5e16),
                 level => {
                     return 150 + 38 * level;
                 },
