@@ -48,7 +48,7 @@ class ContentEnergyCores {
                     return 220 + 110 * level;
                 },
                 level => {
-                    return new Decimal(2 + 0.2 + level).mul(Decimal.pow(1.15, level));
+                    return new Decimal(2 + 0.2 + level).mul(Decimal.pow(4, level));
                 }, "energycores/pion.png"),
             new EnergyCore("Quark", new Decimal(100e19),
                 level => {
