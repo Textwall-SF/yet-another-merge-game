@@ -123,6 +123,21 @@ class MergeObject {
         if (level >= 2499) {
             let l = (1 - Math.min(0.5, Math.max(0, (level - 152)) * 0.04)) * 100;
             inner = "hsl(" + topH + "deg, 100%, " + l + "%";
+            outer = "rgba(0, 255, 0, 0)";
+        }
+        if (level >= 3999) {
+            let l = (1 - Math.min(0.6, Math.max(0, (level - 152)) * 0.04)) * 100;
+            inner = "hsl(" + topH + "deg, 100%, " + l + "%";
+            outer = "rgba(0, 255, 255, 0)";
+        }
+        if (level >= 4999) {
+            let l = (1 - Math.min(0.62, Math.max(0, (level - 152)) * 0.04)) * 100;
+            inner = "hsl(" + topH + "deg, 100%, " + l + "%";
+            outer = "rgba(0, 0, 255, 0)";
+        }
+        if (level >= 9999) {
+            let l = (1 - Math.min(0.65, Math.max(0, (level - 152)) * 0.04)) * 100;
+            inner = "hsl(" + topH + "deg, 100%, " + l + "%";
             outer = "rgba(255, 0, 255, 0)";
         }
 
@@ -165,7 +180,7 @@ class MergeObject {
             ctx.font = "700 " + (r * 0.65 * sizeMod) + "px Montserrat, Arial, sans-serif";
             ctx.fillText("#", x, y - r * 0.2);
             ctx.font = "700 " + (r * 0.43 * sizeMod) + "px Montserrat, Arial, sans-serif";
-            ctx.fillText(functions.formatNumber(Math.round(level + 1), 0, 0, 100000), x, y + r * 0.35, r * 0.9);
+            ctx.fillText(functions.formatNumber(Math.round(level + 1), 0, 0, 1000000), x, y + r * 0.35, r * 0.9);
         }
     }
 
@@ -211,6 +226,9 @@ class MergeObject {
                     let lvl = Math.min(8000, Math.floor(level / 3 * random.nextDouble()));
                     this.renderMerger(ctx, cx, cy, r * sizeMod / 2.75 * rMult, lvl, lifeTime * 5 * random.nextDouble(), false);
                 }
+                if (level >= 12000) {
+                    this.drawBubble(ctx, cx, cy, r / 4.5, outerCol, "white", 0.4);
+                }
                 else {
                     this.drawBubble(ctx, cx, cy, r / 3.5, outerCol, "black", 0.4);
                 }
@@ -218,6 +236,7 @@ class MergeObject {
         }
 
         ctx.fillStyle = level < 149 ? "black" : outerCol;
+        ctx.fillStyle = level > 14999 ? "white": outerCol;
 
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
