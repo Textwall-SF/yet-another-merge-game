@@ -35,7 +35,7 @@ class ContentMolecules {
             }),
             mergerLevelExponent2: new MoleculeUpgrade("Merger Exponentiality II", "Merger Exponential Growth Report?",
                 level => Decimal.pow(1e300, level ** 5 + 5),
-                level => new Decimal(5 + level * 0.01315468246), {
+                level => new Decimal(level * 0.01315468246), {
                 getEffectDisplay: effectDisplayTemplates.numberStandard("x", "", 7)
             }),
             fasterMolecules: new MoleculeUpgrade("Faster Molecules", "Molecules will take less merges to level up. The effect will take place immediately.",
