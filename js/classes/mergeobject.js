@@ -82,12 +82,13 @@ class MergeObject {
 
     static calculateOutputForLevel(level) {
         const social = game.prestige.upgrades.socialBoost.apply();
-        return Decimal.pow(Upgrade.apply(game.molecules.upgrades.mergerLevelExponent), level).mul(game.prestige.getQuantumFoamBoost())
+        return Decimal.pow(Upgrade.apply(game.molecules.upgrades.mergerLevelExponent), level).pow(Upgrade.apply(game.molecules.upgrades.mergerLevelExponent2), level).mul(game.prestige.getQuantumFoamBoost())
             .mul(Upgrade.apply(game.prestige.upgrades.matterBoost))
             .mul(game.energyCores.getCoreBoost())
             .mul(game.quantumProcessor.getProcessorBoost())
             .mul(Upgrade.apply(game.isotopes.upgrades.matterBoost))
             .mul(Upgrade.apply(game.molecules.upgrades.matterBoost))
+            .mul(Upgrade.apply(game.molecules.upgrades.matterBoost2))
             .mul(social);
     }
 
