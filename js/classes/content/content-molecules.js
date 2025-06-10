@@ -17,7 +17,7 @@ class ContentMolecules {
                 level => Decimal.pow(10, level ** 2 + 3 + Math.max(0, level - 200) ** 3 + Math.max(0, level - 5000) ** 4),
                 level => Decimal.pow(2, level)),
             matterBoost2: new MoleculeUpgrade("More Matter II", "It's so simple. Just a plain Matter Boost. Again.",
-                level => Decimal.pow(100, level ** 3 + 4 + Math.max(0, level - 2000) ** 4 + Math.max(0, level - 10000) ** 5),
+                level => Decimal.pow(100, level ** 4 + 5 + Math.max(0, level - 2000) ** 5 + Math.max(0, level - 10000) ** 6),
                 level => Decimal.pow(5, level)),
             fasterEnergyCores: new MoleculeUpgrade("Faster Energy Cores", "Energy Cores will take less Merges to Level up. The effect will take place immediately.",
                 level => Decimal.pow(1e3, level ** 3 + 3),
