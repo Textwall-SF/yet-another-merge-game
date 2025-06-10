@@ -61,6 +61,11 @@ class GameBackground {
                 fontColor: "#ffffff",
                 topBarColor: "#000000"
             },
+            {
+                level: 17499,
+                fontColor: "#ffffff",
+                topBarColor: "#dddd00",
+            },
             {   
                 level: 19999,
                 fontColor: "#ffffff",
