@@ -22,7 +22,7 @@ const CoreResetWindowComponent = WindowComponent.extend({
     },
     computed: {
         canBuy() {
-            return game.quantumProcessor.cores.length < 5 && game.prestige.quantumFoam.gte(game.quantumProcessor.getProcessorCorePrice());
+            return game.quantumProcessor.cores.length < 10 && game.prestige.quantumFoam.gte(game.quantumProcessor.getProcessorCorePrice());
         }
     },
     template: `<window icon="images/tabs/quantumprocessor.png" title="Are you sure?">
