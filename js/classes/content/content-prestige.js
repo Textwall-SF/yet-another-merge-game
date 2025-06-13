@@ -43,7 +43,6 @@ class ContentPrestige {
                     return level > 0 ? (new Decimal(10e6).mul(Decimal.pow(50, level - 1))) : new Decimal(0);
                 }, {
                 getEffectDisplay: effectDisplayTemplates.numberStandard("", ""),
-                maxLevel: 300,
                 onBuy(){
                     game.matter.amount = Decimal.max(game.matter.amount, this.apply());
                 }
